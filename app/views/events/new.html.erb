@@ -1,0 +1,21 @@
+
+
+  <div class="container col-md-8 order-md-1">
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+      <%= label_tag 'Titre :' %>
+        <%= text_field_tag 'title',@event.title, class: "form-control"  %>
+      <%= label_tag 'description :' %>
+        <%= text_field_tag 'description', @event.description, class: "form-control"  %>
+      <%= label_tag 'Ville :' %>
+        <%= text_field_tag 'location', @event.location, class: "form-control"  %>
+        <%= label_tag 'durée :' %>
+          <%= text_field_tag 'duration', @event.location, class: "form-control"  %>
+          <%= label_tag 'Prix :' %>
+            <%= text_field_tag 'price', @event.location, class: "form-control"  %>
+          
+
+
+    <%= submit_tag "Confirmer", class: "btn btn-lg btn-block btn-primary mt-3" %>
+    <% end %>
+</div>

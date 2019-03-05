@@ -1,0 +1,14 @@
+<h1>Profil de <%= current_user.first_name %> </h1>
+<p><%= current_user.last_name %></p>
+<p><%= current_user.email %></p>
+<p><%= current_user.description %></p>
+
+<p><%= link_to "Modifier email/mot de passe", edit_user_registration_path %></p>
+
+<p><%= link_to "Modifier ton profil", edit_user_path %></p>
+
+<%= @user.email %>
+
+<% @user.events.each_with_index do |event, index| %>
+<%= event.title %>
+<% end %>

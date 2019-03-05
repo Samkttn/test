@@ -1,0 +1,21 @@
+<div class="jumbotron">
+        <div class="container">
+          <h3 class="display-3">Bienvenue sur EventBrite</h3>
+          <p>Le meilleur endroit pour créer, trouver les évenements de ta ville !</p>
+        </div>
+      </div>
+  <% Event.all.each_with_index do |event, index| %>
+<div class="card text-center">
+  <div class="card-header">
+    <h3>Evenement n° <%= event.id%></h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= event.title%></h5>
+    <p class="card-text"><%= event.description%></p>
+    <a><%= link_to "Plus de détail", event_path(event.id), class: "btn btn-primary" %></a>
+  </div>
+  <div class="card-footer text-muted">
+    <p><em><%= event.start_date%></em></p>
+  </div>
+</div><br><br>
+<% end %>
